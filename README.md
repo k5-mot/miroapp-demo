@@ -6,6 +6,12 @@
    - Python, Langchain, Langserve
    - http://localhost:8000/docs for API documentation
 
+![](./doc/diagram.png)
+
+## Demo
+
+![](./doc/demo.gif)
+
 ## Frontend
 
 ### 開発環境のセットアップ手順
