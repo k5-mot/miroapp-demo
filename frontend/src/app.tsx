@@ -21,13 +21,18 @@ async function getAbstract() {
         context += `- ${note.content}\n`
     }
 
-    // Run LLM chain
+    // Create sticky note
     let stickyNote = await miro.board.createStickyNote({
         content: "生成中！！！",
         x: 0,
         y: 0,
     });
+    miro.board.viewport.zoomTo(stickyNote)
+
+    // Run LLM chain
     const result = await remoteChain.invoke({ "context": context }) as AIMessage;
+
+    // Update sticky note
     stickyNote.content = result.content as string
     await stickyNote.sync()
 
@@ -71,7 +76,7 @@ const App: React.FC = () => {
             }
             {
                 activeTab === 1 ? <div className="cs1 ce12">
-                    <button className="button button-primary" onClick={getAbstract}>Get Abstract</button>
+                    <button className="button button-primary" onClick={getAbstract}>錬金術</button>
                 </div> : ""
             }
             {
