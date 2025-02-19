@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_core.runnables import Runnable
+from langchain_core.runnables import Runnable, RunnableParallel
 from langchain.prompts import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
@@ -9,6 +9,7 @@ from langchain.prompts import (
 from langchain_ollama import ChatOllama
 from langchain_anthropic import ChatAnthropic
 from langchain_openai import AzureChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
@@ -30,13 +31,14 @@ def renkinChain() -> Runnable:
     human_prompt = HumanMessagePromptTemplate.from_template(HUMAN_TEMPLATE)
     prompt = ChatPromptTemplate.from_messages([system_prompt, human_prompt])
     model = ChatOllama(base_url=OLLAMA_API_URL, model="elyza3:8b")
+    parser = StrOutputParser()
     # model = AzureChatOpenAI(
     #     azure_deployment=AZURE_OPENAI_DEPLOYMENT,
     #     azure_endpoint=AZURE_OPENAI_ENDPOINT,
     #     api_key=AZURE_OPENAI_API_KEY,
     #     api_version="2024-09-01-preview",
     # )
-    chain = prompt | model
+    chain = RunnableParallel({"answer": prompt | model | parser})
     return chain
 
 
@@ -60,4 +62,4 @@ if __name__ == "__main__":
         """
     }
     res = chain.invoke(inputs)
-    print(res.content)
+    print(res["answer"])

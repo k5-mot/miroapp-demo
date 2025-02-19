@@ -1,0 +1,30 @@
+@layer reset, base, tokens, recipes, utilities;
+@import "@serendie/ui/styles.css";
+/* @import 'mirotone/dist/styles.css'; */
+@import "@serendie/design-token/tokens.css";
+
+h1 {
+    font-size: var(--sd-reference-typography-scale-expanded-large);
+    color: var(--sd-system-color-impression-primary);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+#root {
+    width: 100%;
+    overflow: auto;
+    padding: var(--space-medium);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
