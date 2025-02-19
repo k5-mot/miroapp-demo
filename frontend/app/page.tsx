@@ -18,7 +18,7 @@ export default function Page() {
             overflowY: "scroll",
         }}>
             <VStack style={{
-                margin: '0 0 50px 0',
+                margin: '0 0 30px 0',
                 gap: '16px',
             }}>
                 <Image
@@ -40,7 +40,7 @@ export default function Page() {
                     style={{ width: '80%' }}>
                     機能C
                 </Button>
-                <Button size="medium" styleType="filled"
+                {/* <Button size="medium" styleType="filled"
                     style={{ width: '80%' }}>
                     機能D
                 </Button>
@@ -51,7 +51,7 @@ export default function Page() {
                 <Button size="medium" styleType="filled"
                     style={{ width: '80%' }}>
                     機能F
-                </Button>
+                </Button> */}
                 <TextField label="メールアドレス" placeholder="email" style={{ padding: '10px auto' }} />
                 <TextField label="パスワード" placeholder="password" />
                 <Divider />
