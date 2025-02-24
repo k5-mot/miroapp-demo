@@ -2,24 +2,24 @@ import { defineConfig } from "@pandacss/dev";
 import { SerendiePreset } from "@serendie/ui";
 
 export default defineConfig({
-    // Whether to use css reset
-    preflight: true,
+  // Whether to use css reset
+  preflight: true,
 
-    // Where to look for your css declarations
-    include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+  // Where to look for your css declarations
+  include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
 
-    // Files to exclude
-    exclude: [],
+  // Files to exclude
+  exclude: [],
 
-    // Useful for theme customization
-    theme: {
-        extend: {},
-    },
+  // Useful for theme customization
+  theme: {
+    extend: {}
+  },
 
-    // The output directory for your css system
-    outdir: "styled-system",
+  // The output directory for your css system
+  outdir: "styled-system",
 
-    // for Serendie UI
-    jsxFramework: "react",
-    presets: [SerendiePreset],
+  // for Serendie UI
+  jsxFramework: "react",
+  presets: [SerendiePreset]
 });

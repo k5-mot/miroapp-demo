@@ -1,0 +1,44 @@
+{
+  "editor.insertSpaces": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "never"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.o": true,
+    "**/*.obj": true,
+    "**/*.ilk": true,
+    "**/*.pdb": true,
+    "**/*.tlog": true,
+    "**/*.idb": true,
+    "**/*.dll": true,
+    "**/node_modules": true,
+  },
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "[javascript][javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[css][postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+  },
+}

@@ -1,16 +1,28 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-    "name": "Debian",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    // "image": "mcr.microsoft.com/devcontainers/base:bullseye",
-    "dockerFile": "./Dockerfile",
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    // "features": {},
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-    // Configure tool-specific properties.
-    // "customizations": {},
-    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
+  "name": "Frontend",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
+  "postStartCommand": "bash ./.devcontainer/postStart.sh",
+  "containerEnv": {
+    "WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "formulahendry.auto-rename-tag"
+        // "ms-vscode.vscode-typescript-tslint-plugin",
+        // "msjsdiag.debugger-for-chrome",
+        // "octref.vetur",
+        // "stylelint.vscode-stylelint"
+      ]
+    }
+  }
 }
