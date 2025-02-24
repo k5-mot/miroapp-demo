@@ -24,5 +24,9 @@
         // "stylelint.vscode-stylelint"
       ]
     }
-  }
+  },
+  // "mounts": [
+  //   "source=${localWorkspaceFolder}/..,target=/workspaces,type=bind,consistency=cached",
+  //   "source=~/.ssh,target=/home/vscode/.ssh",
+  // ],
 }
