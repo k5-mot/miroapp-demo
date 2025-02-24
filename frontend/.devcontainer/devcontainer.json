@@ -10,6 +10,12 @@
   "containerEnv": {
     "WORKSPACE_FOLDER": "${localWorkspaceFolder}"
   },
+  "mounts": [
+    "source=${SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  },
   "customizations": {
     "vscode": {
       "settings": {},
