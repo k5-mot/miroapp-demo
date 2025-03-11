@@ -1,15 +1,14 @@
 import os
+
 from dotenv import load_dotenv
-from langchain_core.runnables import Runnable, RunnableParallel
 from langchain.prompts import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     SystemMessagePromptTemplate,
 )
-from langchain_ollama import ChatOllama
-from langchain_anthropic import ChatAnthropic
-from langchain_openai import AzureChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import Runnable, RunnableParallel
+from langchain_ollama import ChatOllama
 
 load_dotenv()
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
@@ -17,7 +16,10 @@ AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
-SYSTEM_TEMPLATE = "錬金術は科学と非なるものです。また、あなたは熟練の錬金術師です。以下の質問に答えてください。"
+SYSTEM_TEMPLATE = """
+錬金術は科学と非なるものです。
+また、あなたは熟練の錬金術師です。以下の質問に答えてください。
+"""
 HUMAN_TEMPLATE = """
 以下のリストの材料を組み合わせて、錬成できる有機物を答えてください。
 
@@ -26,7 +28,8 @@ HUMAN_TEMPLATE = """
 """
 
 
-def renkinChain() -> Runnable:
+def get_renkin_chain() -> Runnable:
+    """Get the runnable chain for the renkin chain."""
     system_prompt = SystemMessagePromptTemplate.from_template(SYSTEM_TEMPLATE)
     human_prompt = HumanMessagePromptTemplate.from_template(HUMAN_TEMPLATE)
     prompt = ChatPromptTemplate.from_messages([system_prompt, human_prompt])
@@ -38,14 +41,13 @@ def renkinChain() -> Runnable:
     #     api_key=AZURE_OPENAI_API_KEY,
     #     api_version="2024-09-01-preview",
     # )
-    chain = RunnableParallel({"answer": prompt | model | parser})
-    return chain
+    return RunnableParallel({"answer": prompt | model | parser})
 
 
 if __name__ == "__main__":
-    chain = renkinChain()
+    chain = get_renkin_chain()
     inputs = {
-        "context": f"""
+        "context": """
         - 水 35L
         - 炭素 20kg
         - アンモニア 4L

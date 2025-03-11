@@ -1,8 +1,10 @@
-from langserve import add_routes
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from langserve import add_routes
 
-import chains
+import customchains
 
 app = FastAPI(
     title="LangChain Server",
@@ -21,7 +23,7 @@ app.add_middleware(
 
 add_routes(
     app,
-    chains.renkinChain(),
+    customchains.get_renkin_chain(),
     path="/ollama",
 )
 
@@ -29,4 +31,6 @@ add_routes(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    FASTAPI_HOST = os.getenv("FASTAPI_HOST", "localhost")
+    FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", "8000"))
+    uvicorn.run(app, host="FASTAPI_HOST", port=FASTAPI_PORT)
