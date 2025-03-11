@@ -22,5 +22,11 @@
                 "tamasfe.even-better-toml" // TOML support
             ]
         }
-    }
+    },
+    // "remoteEnv": {
+    //     "SSH_AUTH_SOCK": "/ssh-agent"
+    // },
+    // "mounts": [
+    //     "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+    // ]
 }

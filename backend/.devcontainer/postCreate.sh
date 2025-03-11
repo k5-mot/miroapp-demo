@@ -19,3 +19,6 @@ export PATH=/home/${USERNAME}/.volta/bin:${PATH}
 
 npm install -g npm
 npm install -g git-cz
+
+echo "/usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa" >> $HOME/.bashrc
+echo "source $HOME/.keychain/$(hostname)-sh" >> $HOME/.bashrc

@@ -6,7 +6,7 @@ ARG USER_GID=$USER_UID
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get install -y curl git ca-certificates
+RUN apt-get install -y curl git ca-certificates openssh-client socat keychain
 
 USER vscode
 
