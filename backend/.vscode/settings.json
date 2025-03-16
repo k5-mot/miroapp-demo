@@ -10,6 +10,11 @@
     },
     "git.openRepositoryInParentFolders": "always",
     "extensions.ignoreRecommendations": false,
-    "python.analysis.typeCheckingMode": "off",
     "python.defaultInterpreterPath": ".venv/bin/python",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "/usr/bin/zsh"
+        },
+    },
 }

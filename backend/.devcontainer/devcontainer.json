@@ -5,28 +5,22 @@
     "image": "mcr.microsoft.com/devcontainers/base:jammy",
     "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
     "postStartCommand": "bash ./.devcontainer/postStart.sh",
-    "containerEnv": {
-        "UV_LINK_MODE": "copy"
-    },
+    "runArgs": [
+        "--env-file",
+        ".env"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
                 "charliermarsh.ruff", // Formatter/Linter
-                "ms-python.mypy-type-checker", // Type checker
-                // "ms-pyright.pyright", // Type checker
-                // "ms-python.python", // Language support
-                // "ms-python.vscode-pylance", // Language server
-                // "ms-python.debugpy", // Debugger
+                "ms-python.python", // Language support
+                "ms-python.vscode-pylance", // Language server (Type checker)
+                "ms-python.debugpy", // Debugger
                 "njpwerner.autodocstring", // Docstring support
                 "ms-azuretools.vscode-docker", // Docker Support
-                "tamasfe.even-better-toml" // TOML support
+                "tamasfe.even-better-toml", // TOML support
+                "eamodio.gitlens" // Git support
             ]
         }
-    },
-    // "remoteEnv": {
-    //     "SSH_AUTH_SOCK": "/ssh-agent"
-    // },
-    // "mounts": [
-    //     "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
-    // ]
+    }
 }

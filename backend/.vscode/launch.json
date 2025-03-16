@@ -13,7 +13,8 @@
                 "main:app",
                 "--reload"
             ],
-            "jinja": true
+            "jinja": true,
+            "python": "${command:python.interpreterPath}"
         }
     ]
 }
