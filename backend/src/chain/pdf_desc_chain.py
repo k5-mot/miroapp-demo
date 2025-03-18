@@ -1,5 +1,6 @@
 import base64
 from io import BytesIO
+from operator import itemgetter
 from pathlib import Path
 
 import pypdf
@@ -69,6 +70,14 @@ def get_pdf_desc_chain() -> Runnable:
     # parser = StrOutputParser()
     # return prompt | model | parser
     return prompt | model
+    return (
+        {
+            "text": get_text(itemgetter("pdf_path"), itemgetter("page_num")),
+            "image": get_image(itemgetter("pdf_path"), itemgetter("page_num")),
+        }
+        | prompt
+        | model
+    )
 
 
 if __name__ == "__main__":
