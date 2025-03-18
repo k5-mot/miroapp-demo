@@ -15,7 +15,7 @@ function install_apt() {
     sudo apt-get upgrade -y
     sudo apt-get autoremove -y
     sudo apt-get install -y \
-        poppler-utils
+        vim poppler-utils
 }
 
 function install_uv() {
@@ -32,7 +32,6 @@ function install_volta() {
     export PATH=/home/${USERNAME}/.volta/bin:${PATH}
     ls /home/${USERNAME}/.volta/bin
     volta install node@22
-    export PATH=/home/${USERNAME}/.volta/bin:${PATH}
 
     npm install -g npm
     npm install -g git-cz
