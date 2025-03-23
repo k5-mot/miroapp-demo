@@ -8,7 +8,7 @@ module.exports = {
     scopes: [],
     types: {
         chore: {
-            description: 'Build process or auxiliary tool changes',
+            description: 'ANBuild process or auxiliary tool changes',
             emoji: '🤖',
             value: 'chore'
         },
