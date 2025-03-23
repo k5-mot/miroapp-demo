@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
     "name": "Backend-Python-Dev",
-    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "dockerFile": "Dockerfile",
     "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
     "postStartCommand": "bash ./.devcontainer/postStart.sh",
     "runArgs": [

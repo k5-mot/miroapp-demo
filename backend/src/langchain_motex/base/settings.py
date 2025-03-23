@@ -33,7 +33,7 @@ def get_settings() -> Settings:
 if __name__ == "__main__":
     import json
 
-    from app_logger import get_logger
+    from langchain_motex.base.app_logger import get_logger
 
     settings = get_settings()
     logger = get_logger()

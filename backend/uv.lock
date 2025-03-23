@@ -8,6 +8,15 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "aiofiles"
+version = "24.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz", hash = "sha256:22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c", size = 30247 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a5/45/30bb92d442636f570cb5651bc661f52b610e2eec3f891a5dc3a4c3667db0/aiofiles-24.1.0-py3-none-any.whl", hash = "sha256:b4ec55f4195e3eb5d7abd1bf7e061763e864dd4954231fb8539a0ef8bb8260e5", size = 15896 },
+]
+
+[[package]]
 name = "aiohappyeyeballs"
 version = "2.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -107,61 +116,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz", hash = "sha256:1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e", size = 810562 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fc/30/d4986a882011f9df997a55e6becd864812ccfcd821d64aac8570ee39f719/attrs-25.1.0-py3-none-any.whl", hash = "sha256:c75a69e28a550a7e93789579c22aa26b0f5b83b75dc4e08fe092980051e1090a", size = 63152 },
-]
-
-[[package]]
-name = "backend"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "fastapi" },
-    { name = "langchain" },
-    { name = "langchain-community" },
-    { name = "langchain-core" },
-    { name = "langchain-google-genai" },
-    { name = "langchain-ollama" },
-    { name = "langchain-openai" },
-    { name = "langchain-text-splitters" },
-    { name = "langserve" },
-    { name = "pdf2image" },
-    { name = "pypdf" },
-    { name = "sse-starlette" },
-    { name = "uvicorn" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pre-commit" },
-    { name = "pyright" },
-    { name = "pytest" },
-    { name = "python-dotenv" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115.11" },
-    { name = "langchain", specifier = ">=0.3.20" },
-    { name = "langchain-community", specifier = ">=0.3.19" },
-    { name = "langchain-core", specifier = ">=0.3.43" },
-    { name = "langchain-google-genai", specifier = ">=2.1.0" },
-    { name = "langchain-ollama", specifier = ">=0.2.3" },
-    { name = "langchain-openai", specifier = ">=0.3.8" },
-    { name = "langchain-text-splitters", specifier = ">=0.3.6" },
-    { name = "langserve", specifier = ">=0.3.1" },
-    { name = "pdf2image", specifier = ">=1.17.0" },
-    { name = "pypdf", specifier = ">=5.4.0" },
-    { name = "sse-starlette", specifier = ">=2.2.1" },
-    { name = "uvicorn", specifier = ">=0.34.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pre-commit", specifier = ">=4.1.0" },
-    { name = "pyright", specifier = ">=1.1.396" },
-    { name = "pytest", specifier = ">=8.3.5" },
-    { name = "python-dotenv", specifier = ">=1.0.1" },
-    { name = "ruff", specifier = ">=0.9.10" },
 ]
 
 [[package]]
@@ -721,6 +675,65 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/d7/88/d6b12d4fe8067f5df710a819cae49cd3567c4b92ad5e240ddd549e396872/langchain_google_genai-2.1.0.tar.gz", hash = "sha256:86a3e12436f2ea1ce07888cb33fd80884bce5953be6cfe63e8493c8c0cdf3e17", size = 35916 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d2/e0/65523fcd262ca7d76a1398ff69ad4d0583cf39904ed53d5b22726bb2d2cb/langchain_google_genai-2.1.0-py3-none-any.whl", hash = "sha256:6894009385670a75ba30d146d3f4d9ddb7ae8e425990b64f4983050111c2ed97", size = 40197 },
+]
+
+[[package]]
+name = "langchain-motex"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "aiofiles" },
+    { name = "fastapi" },
+    { name = "langchain" },
+    { name = "langchain-community" },
+    { name = "langchain-core" },
+    { name = "langchain-google-genai" },
+    { name = "langchain-ollama" },
+    { name = "langchain-openai" },
+    { name = "langchain-text-splitters" },
+    { name = "langserve" },
+    { name = "pdf2image" },
+    { name = "pypdf" },
+    { name = "python-multipart" },
+    { name = "sse-starlette" },
+    { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pre-commit" },
+    { name = "pyright" },
+    { name = "pytest" },
+    { name = "python-dotenv" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "aiofiles", specifier = ">=24.1.0" },
+    { name = "fastapi", specifier = ">=0.115.11" },
+    { name = "langchain", specifier = ">=0.3.20" },
+    { name = "langchain-community", specifier = ">=0.3.19" },
+    { name = "langchain-core", specifier = ">=0.3.43" },
+    { name = "langchain-google-genai", specifier = ">=2.1.0" },
+    { name = "langchain-ollama", specifier = ">=0.2.3" },
+    { name = "langchain-openai", specifier = ">=0.3.8" },
+    { name = "langchain-text-splitters", specifier = ">=0.3.6" },
+    { name = "langserve", specifier = ">=0.3.1" },
+    { name = "pdf2image", specifier = ">=1.17.0" },
+    { name = "pypdf", specifier = ">=5.4.0" },
+    { name = "python-multipart", specifier = ">=0.0.20" },
+    { name = "sse-starlette", specifier = ">=2.2.1" },
+    { name = "uvicorn", specifier = ">=0.34.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pre-commit", specifier = ">=4.1.0" },
+    { name = "pyright", specifier = ">=1.1.396" },
+    { name = "pytest", specifier = ">=8.3.5" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "ruff", specifier = ">=0.9.10" },
 ]
 
 [[package]]
@@ -1284,6 +1297,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/bc/57/e84d88dfe0aec03b7a2d4327012c1627ab5f03652216c63d49846d7a6c58/python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca", size = 39115 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl", hash = "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a", size = 19863 },
+]
+
+[[package]]
+name = "python-multipart"
+version = "0.0.20"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz", hash = "sha256:8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13", size = 37158 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/45/58/38b5afbc1a800eeea951b9285d3912613f2603bdf897a4ab0f4bd7f405fc/python_multipart-0.0.20-py3-none-any.whl", hash = "sha256:8a62d3a8335e06589fe01f2a3e178cdcc632f3fbe0d492ad9ee0ec35aab1f104", size = 24546 },
 ]
 
 [[package]]

@@ -15,3 +15,8 @@ Start-Service ssh-agent
 # ユーザ権限で以下を実行
 ssh-add C:\Users\<username>\.ssh\id_rsa
 ```
+
+```
+uv run -- uvicorn main:app --reload
+curl -X POST -F "file=@doc/sample.pdf" http://localhost:8000
+```
