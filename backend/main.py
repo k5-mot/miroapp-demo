@@ -8,8 +8,7 @@ from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.params import File
 
-from langchain_motex.base.app_logger import get_logger
-from langchain_motex.base.settings import get_settings
+from langchain_motex.base import get_logger, get_settings
 from langchain_motex.chain import PDF_MULTI_PAGE_CHAIN
 
 settings = get_settings()
