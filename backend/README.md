@@ -19,4 +19,6 @@ ssh-add C:\Users\<username>\.ssh\id_rsa
 ```
 uv run -- uvicorn main:app --reload
 curl -X POST -F "file=@doc/sample.pdf" http://localhost:8000
+
+uv run -- pre-commit install
 ```
