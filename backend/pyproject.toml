@@ -46,11 +46,12 @@ line-length = 88
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "AIR",  # Airflow
-    "ERA",  # eradicate
-    "D100", # undocumented-public-module
-    "D101", # undocumented-public-class
-    "D104", # undocumented-public-package
+    "AIR",    # Airflow
+    "ERA",    # eradicate
+    "D100",   # undocumented-public-module
+    "D101",   # undocumented-public-class
+    "D104",   # undocumented-public-package
+    "COM812",
 ]
 fixable = ["ALL"]
 unfixable = [
