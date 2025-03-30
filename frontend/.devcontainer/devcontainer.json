@@ -1,38 +1,32 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "Frontend",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
+  "name": "Frontend-Dev",
+  // "dockerComposeFile": "docker-compose.yml",
+  // "service": "app",
+  // "workspaceFolder": "/workspace",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--env-file",
+    "./.devcontainer/devcontainer.env",
+    "--name",
+    "frontend-dev",
+    "--rm"
+  ],
   "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
   "postStartCommand": "bash ./.devcontainer/postStart.sh",
-  "containerEnv": {
-    "WORKSPACE_FOLDER": "${localWorkspaceFolder}"
-  },
-  "mounts": [
-    "source=${SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
-  ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  },
   "customizations": {
     "vscode": {
-      "settings": {},
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "eamodio.gitlens",
-        "formulahendry.auto-rename-tag"
+        "dbaeumer.vscode-eslint", // Linter
+        "esbenp.prettier-vscode", // Formatter
+        "eamodio.gitlens", // Git support
+        "formulahendry.auto-rename-tag" // Auto rename tag
         // "ms-vscode.vscode-typescript-tslint-plugin",
         // "msjsdiag.debugger-for-chrome",
         // "octref.vetur",
         // "stylelint.vscode-stylelint"
       ]
     }
-  },
-  // "mounts": [
-  //   "source=${localWorkspaceFolder}/..,target=/workspaces,type=bind,consistency=cached",
-  //   "source=~/.ssh,target=/home/vscode/.ssh",
-  // ],
+  }
 }

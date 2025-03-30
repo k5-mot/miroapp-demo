@@ -1,16 +1,8 @@
 "use client";
-import {
-  DropdownMenu,
-  Divider,
-  Button,
-  TextField,
-  SvgIcon,
-  ModalDialog
-} from "@serendie/ui";
+import { DropdownMenu, Divider, Button, TextField, SvgIcon } from "@serendie/ui";
 import Image from "next/image";
 import { Container, VStack } from "@/styled-system/jsx";
-// import congratulations from '@/assets/congratulations.png';
-// import MiroSample from '@/components/MiroSample';
+import congratulations from "@/assets/congratulations.png";
 import GetStickyNotes from "@/utils/GetStickeyNotes";
 import { useState } from "react";
 import "@/assets/style.css";
@@ -44,7 +36,19 @@ export default function Page() {
         }}
       >
         <Image
+          loader={({ src }) => src}
           src="https://placehold.jp/500x150.png"
+          alt=""
+          width="500"
+          height="500"
+          style={{
+            width: "80%",
+            height: "auto"
+          }}
+        />
+        <Image
+          loader={({ src }) => src}
+          src={congratulations}
           alt=""
           width="500"
           height="500"

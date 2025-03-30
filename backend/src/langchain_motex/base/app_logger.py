@@ -5,10 +5,8 @@ import sys
 from langchain_motex.base.settings import get_settings
 
 LOG_FORMAT = """
-[%(levelname)s] %(asctime)s.%(msecs)03d
-└─ %(filename)s:%(lineno)d (%(funcName)s)
-%(message)s
-"""
+%(levelname)s %(asctime)s.%(msecs)03d - %(filename)s:%(lineno)d (%(funcName)s)
+%(message)s"""
 LOG_DATE_FORMAT = "%Y/%m/%d %H:%M:%S"
 
 
@@ -31,7 +29,7 @@ class AppLogger(logging.Logger):
         self.addHandler(self.get_stderr_handler())
 
         # Set up the filters
-        self.addFilter(self.WarningFilter())
+        self.addFilter(self.LogFilter())
 
     def get_formatter(self) -> logging.Formatter:
         """Get the formatter for the logger."""
@@ -60,21 +58,21 @@ class AppLogger(logging.Logger):
         handler.setFormatter(self.get_formatter())
         return handler
 
-    class WarningFilter(logging.Filter):
+    class LogFilter(logging.Filter):
         """Filter for warning messages."""
 
         def filter(self, record: logging.LogRecord) -> bool:
             """Filter the log record."""
             if record.levelname == "DEBUG":
-                record.levelname = "DEBUG"
+                record.levelname = "\U0001f50d [DEBUG]"
             elif record.levelname == "INFO":
-                record.levelname = "INFO_"
+                record.levelname = "\u2139\ufe0f  [INFO_]"
             elif record.levelname == "WARNING":
-                record.levelname = "WARN_"
+                record.levelname = "\u26a0\ufe0f  [WARN_]"
             elif record.levelname == "ERROR":
-                record.levelname = "ERROR"
+                record.levelname = "\u274c [ERROR]"
             elif record.levelname == "CRITICAL":
-                record.levelname = "CRITI"
+                record.levelname = "\U0001f6d1 [CRIT_]"
             return True
 
 
