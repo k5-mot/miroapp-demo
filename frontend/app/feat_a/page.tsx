@@ -1,25 +1,12 @@
 "use client";
 import { Button } from "@serendie/ui";
-import Image from "next/image";
 import { Container, VStack } from "@/styled-system/jsx";
-// import GetStickyNotes from "@/utils/GetStickeyNotes";
-// import { useState } from "react";
 import "@/assets/style.css";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
-
-  //   const [notes, setNotes] = useState<string[]>([]);
-  //   const handleClickButton = async () => {
-  //     const newNotes = await GetStickyNotes();
-  //     for (const newNote of newNotes) {
-  //       console.log(newNote);
-  //     }
-  //     console.log(newNotes);
-
-  //     setNotes(newNotes);
-  //   };
 
   return (
     <Container
@@ -46,30 +33,23 @@ export default function Page() {
             height: "auto"
           }}
         />
-
-        <Button
-          size="medium"
-          styleType="filled"
-          style={{ width: "80%" }}
-          onClick={() => router.push("/feat_a")}
-        >
-          機能A
-        </Button>
         <Button
           size="medium"
           styleType="filled"
           style={{ width: "80%" }}
           //   onClick={handleClickButton}
         >
-          機能B
+          オス
         </Button>
         <Button
           size="medium"
-          styleType="filled"
+          styleType="outlined"
           style={{ width: "80%" }}
-          //   onClick={handleClickButton}
+          onClick={() => {
+            router.back();
+          }}
         >
-          機能C
+          戻る
         </Button>
       </VStack>
     </Container>
