@@ -1,10 +1,10 @@
 # Miroapp Demo
 
 - Frontend
-   - ReactJS, Mirotone CSS
+  - ReactJS, Mirotone CSS
 - Backend
-   - Python, Langchain, Langserve
-   - http://localhost:8000/docs for API documentation
+  - Python, Langchain, Langserve
+  - http://localhost:8000/docs for API documentation
 
 ![](./doc/diagram.png)
 
@@ -37,6 +37,7 @@ npm run build
 ### 開発環境のセットアップ手順
 
 ```bash
+
 ```
 
 ### 開発用サーバの起動手順
@@ -46,3 +47,5 @@ pip install -r requirements.txt
 python server.py
 # Run on localhost:8000
 ```
+
+https://zenn.dev/tyyy/articles/devcontainer_git

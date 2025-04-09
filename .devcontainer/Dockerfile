@@ -21,3 +21,4 @@ RUN uv python install 3.12
 RUN curl https://get.volta.sh | bash
 RUN volta install node@22
 RUN npm install -g npm git-cz
+RUN npm install -g @biomejs/biome

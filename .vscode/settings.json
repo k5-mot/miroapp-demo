@@ -23,22 +23,40 @@
     "**/*.tlog": true,
     "**/*.idb": true,
     "**/*.dll": true,
-    "**/node_modules": true,
+    "**/node_modules": true
   },
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
   "[javascript][javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript][typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[css][postcss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true,
+    "editor.insertSpaces": true
   },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "extensions.ignoreRecommendations": false,
+  "python.defaultInterpreterPath": "backend/.venv/bin/python",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    }
+  }
 }
