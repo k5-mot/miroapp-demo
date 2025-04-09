@@ -1,88 +1,99 @@
 module.exports = {
+  // 絵文字の表示
   disableEmoji: false,
-  format: "{emoji} {subject} {scope}",
-  list: [
-    "test", // テスト
-    "feat", // 新機能
-    "fix", // バグ修正
-    "chore", // ビルドプロセスまたは補助ツールの変更
-    "docs", // ドキュメントのみの変更
-    "refactor", // バグ修正や機能追加以外のコード変更
-    "style", // マークアップ、空白、フォーマット、セミコロンの欠落など
-    "ci", // CI関連の変更
-    "perf", // パフォーマンスを向上させるコード変更
-  ],
+  // コミットメッセージの形式
+  format: "{emoji} {scope}:{subject} ",
+  // コミットメッセージの最大文字数
   maxMessageLength: 64,
+  // コミットメッセージの最小文字数
   minMessageLength: 3,
+  // コミット時の質問の一覧
   questions: [
-    "type", // タイプ
-    "scope", // スコープ
-    "subject", // 件名
-    "body", // 本文
-    "breaking", // 破壊的な変更
-    "issues", // 関連する課題
-    "lerna", // Lerna
+    "type",
+    "scope",
+    "subject",
+    // "body",
+    // "breaking",
+    // "issues",
+    // "lerna",
   ],
-  scopes: [],
+  // コミット種別の一覧
+  list: [
+    "feat",
+    "docs",
+    "fix",
+    "style",
+    "ci",
+    "release",
+    "refactor",
+    "test",
+    "chore",
+    "perf",
+  ],
+  // 変更範囲の種別
+  scopes: ["無し", "フロントエンド", "バックエンド"],
+  // コミット種別の詳細
   types: {
-    chore: {
-      description: "ビルドプロセスまたは補助ツールの変更",
-      emoji: "🤖",
-      value: "chore",
-    },
-    ci: {
-      description: "CI関連の変更",
-      emoji: ":construction_worker:",
-      value: "ci",
-    },
-    docs: {
-      description: "ドキュメントのみの変更",
-      emoji: "✏️",
-      value: "docs",
-    },
     feat: {
       description: "新機能",
-      emoji: "🎸",
+      emoji: "✨",
       value: "feat",
+    },
+    docs: {
+      description: "ドキュメント変更",
+      emoji: "📝",
+      value: "docs",
     },
     fix: {
       description: "バグ修正",
       emoji: "🐛",
       value: "fix",
     },
-    perf: {
-      description: "パフォーマンスを向上させるコード変更",
-      emoji: "⚡️",
-      value: "perf",
-    },
-    refactor: {
-      description: "バグ修正や機能追加以外のコード変更",
-      emoji: "💡",
-      value: "refactor",
-    },
-    release: {
-      description: "リリースcommitの作成",
-      emoji: "🏹",
-      value: "release",
-    },
     style: {
-      description: "マークアップ、空白、フォーマット、セミコロンの欠落など",
+      description: "UI変更",
       emoji: "💄",
       value: "style",
     },
+    ci: {
+      description: "CI/CD",
+      emoji: "👷",
+      value: "ci",
+    },
+    release: {
+      description: "リリース",
+      emoji: "🚀",
+      value: "release",
+    },
+    refactor: {
+      description: "リファクタリング",
+      emoji: "♻️",
+      value: "refactor",
+    },
     test: {
-      description: "不足しているテストの追加",
-      emoji: "💍",
+      description: "テスト追加",
+      emoji: "✅",
       value: "test",
     },
+    chore: {
+      description: "開発ツール変更",
+      emoji: "📦",
+      value: "chore",
+    },
+    perf: {
+      description: "性能向上",
+      emoji: "⚡️",
+      value: "perf",
+    },
+
     messages: {
-      type: "コミットする変更の種類を選択してください:",
-      customScope: "このコンポーネントに影響するスコープを選択してください:",
-      subject: "変更の短く、命令的な説明を書いてください:\n",
-      body: "変更の詳細な説明を入力してください:\n ",
-      breaking: "破壊的な変更をリストしてください:\n",
-      footer: "このコミットが解決する課題 (例: #123):",
-      confirmCommit: "このコミットが影響を与えたパッケージ\n",
+      // 質問のメッセージ
+      type: "コミット種別を選択。:",
+      customScope: "変更の影響範囲を選択。:",
+      subject: "変更について簡潔な命令形で説明。:\n",
+      body: "変更について詳細に説明。:\n ",
+      breaking: "後方互換性の破壊箇所を列挙。:\n",
+      footer: "この変更で解決するイシューを記載 (例：#123)。:",
+      confirmCommit: "この変更が影響するパッケージを列挙。:\n",
     },
   },
 };
