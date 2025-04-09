@@ -1,62 +1,60 @@
 {
+  // スペースを挿入するかどうか
   "editor.insertSpaces": true,
+  // タブサイズ
+  "editor.tabSize": 2,
+  // 制御文字を表示するかどうか
   "editor.renderControlCharacters": true,
+  // 空白文字の表示設定
   "editor.renderWhitespace": "all",
+  // 保存時にフォーマットするかどうか
   "editor.formatOnSave": true,
+  // 保存時のコードアクション
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
-    "source.organizeImports": "never"
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   },
+  // ファイルの最後に改行を挿入するかどうか
   "files.insertFinalNewline": true,
+  // ファイルの最後の空行を削除するかどうか
   "files.trimFinalNewlines": true,
+  // 行末の空白を削除するかどうか
   "files.trimTrailingWhitespace": true,
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/*.o": true,
-    "**/*.obj": true,
-    "**/*.ilk": true,
-    "**/*.pdb": true,
-    "**/*.tlog": true,
-    "**/*.idb": true,
-    "**/*.dll": true,
-    "**/node_modules": true
-  },
-  "git.autofetch": true,
-  "git.openRepositoryInParentFolders": "always",
-  "[javascript][javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescript][typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css][postcss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json][jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[python]": {
-    "editor.tabSize": 4,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll": "explicit"
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-  "extensions.ignoreRecommendations": false,
-  "python.defaultInterpreterPath": "backend/.venv/bin/python",
+  // ターミナルのデフォルトプロファイル
   "terminal.integrated.defaultProfile.linux": "zsh",
+  // ターミナルのプロファイル設定
   "terminal.integrated.profiles.linux": {
     "zsh": {
       "path": "/usr/bin/zsh"
     }
-  }
+  },
+  // Gitの自動フェッチを行うかどうか
+  "git.autofetch": true,
+  // 親フォルダのリポジトリを常に開くかどうか
+  "git.openRepositoryInParentFolders": "always",
+  // 拡張機能の推奨を無視するかどうか
+  "extensions.ignoreRecommendations": false,
+  // JavaScript/Reactの設定
+  "[javascript][javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  // TypeScript/Reactの設定
+  "[typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // CSS/PostCSSの設定
+  "[css][postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JSON/JSONCの設定
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  // Pythonの設定
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+  },
+  // Pythonのパス指定
+  "python.defaultInterpreterPath": "backend/.venv/bin/python",
 }
